@@ -3,15 +3,12 @@ description: Uniswap is a decentralized protocol for automated token exchange on
 repository: https://github.com/tothemoney/v3-subgraph
 schema:
   file: ./schema.graphql
-graft:
-  base: QmPrb5mvZj3ycUugZgwLWCvK93jfXfhvfjRXrFk4tRmyCX
-  block: 14292820
 features:
   - nonFatalErrors
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: mainnet
+    network: 8765
     source:
       address: '0x01c5a93bc81Ed4d9561E9Ab3E5dEadd6aE16DF5b'
       abi: Factory
@@ -40,7 +37,7 @@ dataSources:
           handler: handlePoolCreated
   - kind: ethereum/contract
     name: NonfungiblePositionManager
-    network: mainnet
+    network: 8765
     source:
       address: '0x73D948c09a0424407D632EcCBa8EE2aE6BBCb22F'
       abi: NonfungiblePositionManager
@@ -74,7 +71,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pool
-    network: mainnet
+    network: 8765
     source:
       abi: Pool
     mapping:
